@@ -8,6 +8,7 @@ import CloseIcon from '@mui/icons-material/CancelRounded';
 import FavoritesButton from './FavoritesButton';
 import Information from './Informacion';
 import Episodes from './Episodios'
+import CharacterCard from './Card'
 import axios from "axios";
 
 const CardDetailBG= styled.div`
@@ -37,6 +38,7 @@ const CardDetailWrapper= styled.div`
     border-radius: 5px;
     background-color: white;
     overflow: hidden;
+    border:1px solid #B9B9B9;
     
     -webkit-transition: width 0.3s ease-out;
     -moz-transition: width 0.3s ease-out;
@@ -244,19 +246,40 @@ const EpisodeWrapper = styled.div`
     
 `
 
-const CharacterGridFavorites = styled.div`
+const FavCharactersWrapper= styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:40px ;
+    color: black;
+    width: 100%;
+    min-height: 500px;
+    
+`
+const FavCharacterGrid = styled.div`
     margin-top: 35px;
     margin-bottom: 35px;
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     gap:20px;
     width: 80%;
     min-width: 341px;
-    
+    .favorite-character-title{
+        width:100%;
+        text-align: left;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 27px;
+        color: #7A7A7A;
+    }
 `
 
 
@@ -348,7 +371,19 @@ export default function CardDetails(props) {
                 </div>
                 
             </EpisodeWrapper>
-            
+            <FavCharactersWrapper>
+                <FavCharacterGrid>
+                    <div className='favorite-character-title'>
+                        Personajes interesantes:
+                    </div>
+                    {
+                    state.favoriteCharacters?.map((item,key) => (
+                        <CharacterCard key={key} character={item}></CharacterCard>
+                    ))
+                    }
+                    
+                </FavCharacterGrid>
+            </FavCharactersWrapper>
         </CardDetailWrapper>
     </CardDetailBG>  
         
