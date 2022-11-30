@@ -300,7 +300,7 @@ export default function CardDetails(props) {
                     episodes.push(ep)
                 }
             });
-            console.log(episodes)
+            // console.log('log de episodios: '+episodes)
         }
     }
     var api='https://rickandmortyapi.com/api'
@@ -309,8 +309,8 @@ export default function CardDetails(props) {
           .then((res) => {
             if (res.status === 200 ) {
               const episodeList=res.data
-            //   console.log('response: '+res.data)
-              setEpisodesArray(episodeList);
+              console.log('response: '+res.data)
+              setEpisodesArray([...episodeList]);
               console.log(episodesArray)
               setLoadingData(false);
             }

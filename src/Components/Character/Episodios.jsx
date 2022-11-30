@@ -90,10 +90,14 @@ function EpisodesCard(props){
 }
 
 export default function Episodes(props) {
+    console.log(props.episodes)
   return(
         <EpisodesGrid>
-            {props.episodes?.map((item,key) => (
-              <EpisodesCard key={key} title={item.name} no={item.episode} date={item.air_date}></EpisodesCard>
+            {props.episodes?.lenght<2?
+                <EpisodesCard title={props.episodes.name} no={props.episodes.episode} date={props.episodes.air_date}></EpisodesCard>
+                :
+                props.episodes?.map((item,key) => (
+                    <EpisodesCard key={key} title={item.name} no={item.episode} date={item.air_date}></EpisodesCard>
             ))}
         </EpisodesGrid>
     
