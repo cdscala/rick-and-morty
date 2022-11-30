@@ -95,7 +95,7 @@ const CardDetailWrapper= styled.div`
             object-fit: cover;
             width: 100%;
             height:50%;
-            z-index: 1;
+            z-index: 0;
         }
     }
     .card-detail-header-info{
