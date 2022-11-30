@@ -1,0 +1,20 @@
+const prefix = "/";
+
+export const HOME = prefix + "home";
+export const FAVORITES = HOME+ prefix + "Favorites";
+export const CHARACTERS = HOME+ prefix + "Characters";
+export const CHARACTERSALL = CHARACTERS + prefix + "All";
+export const UNKNOWN = CHARACTERS + prefix + "Unknown";
+export const FEMALE = CHARACTERS + prefix + "Female";
+export const MALE = CHARACTERS + prefix + "Male";
+export const GENDERLESS = CHARACTERS + prefix + "Genderless";
+// export const TABLES = prefix + "tables";
+// export const SETTINGS = prefix + "settings";
+// export const INVOICES = prefix + "invoices";
+// export const CONTACT = prefix + "contact";
+// export const DASHBOARD = (id) => prefix + `dashboard/${id ? id : ":id"}`;
+// export const SHORT_LIST = (id) => prefix + `short-list/${id ? id : ":id"}`;
+// export const ZOOM = (id,id1,id2) => prefix + `x-ray/${id && id1 && id2 ? `${id}/${id1}/${id2}` : ":id/:id1/:id2"}`;
+// export const JOB_DESCRIPTION = (id) => prefix + `Job-description/${id ? id : ":id"}`;
+// export const CANDIDATOS = (id) => prefix + `candidatos/${id ? id : ":id"}`;
+// export const CANDIDATO_DEFINIDO = (id, cId) => prefix + `candidatos/${id ? `${id}/candidato/${cId}` : ":id/candidato/:cId"}`;

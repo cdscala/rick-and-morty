@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Welcome from './Routes/Welcome';
+import Home from './Routes/Home';
+import ContextWrapper from './Context/ContextWrapper'
+import { BrowserRouter as Router , Routes, Route } from "react-router-dom";
+import * as ROUTES from "./routes";
+import Characters from './Routes/Characters';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ContextWrapper>
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<Welcome/>} />
+            <Route exact path={ROUTES.HOME} element={<Home/>}>
+              <Route index path={ROUTES.CHARACTERSALL} element={<Characters/>}/>
+              <Route path={ROUTES.UNKNOWN} element={<Characters/>}/>
+              <Route path={ROUTES.FEMALE} element={<Characters/>}/>
+              <Route path={ROUTES.MALE} element={<Characters/>}/>
+              <Route path={ROUTES.GENDERLESS} element={<Characters/>}/>
+            </Route>
+          </Routes>
+        </Router>
+      </ContextWrapper>
     </div>
   );
 }
