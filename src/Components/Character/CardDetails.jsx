@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import ThumbHeader from '../../Resouces/CardThumb.png'
 import {useMediaQuery} from '../Query/MediaQueries'
@@ -7,6 +7,8 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CloseIcon from '@mui/icons-material/CancelRounded';
 import FavoritesButton from './FavoritesButton';
 import Information from './Informacion';
+import Episodes from './Episodios'
+import axios from "axios";
 
 const CardDetailBG= styled.div`
     width: 100%;
@@ -30,7 +32,7 @@ const CardDetailWrapper= styled.div`
     justify-content: flex-start;
     width: 80%;
     max-width: 900px;
-    height: 80%;
+    height: fit-content;
     position: absolute;
     border-radius: 5px;
     background-color: white;
@@ -261,7 +263,51 @@ const CharacterGridFavorites = styled.div`
 export default function CardDetails(props) {
     const matches = useMediaQuery('(min-width:1000px)');
     const { state } = useContext(charactersContext)
+    const [loadingData, setLoadingData] = useState(true);
+    const [errorPage, setErrorPage] =useState(false);
+    let episodes =[];
+    const [episodesArray, setEpisodesArray] =useState([]);
     
+    function getGroup() {
+        
+        if (state.selectedCharacter){
+            state.selectedCharacter.episode.forEach(element => {
+                const ep=parseInt(element.substring(40,element.lenght),10)
+                if (!episodes.includes(ep)){
+                    episodes.push(ep)
+                }
+            });
+            console.log(episodes)
+        }
+    }
+    var api='https://rickandmortyapi.com/api'
+    async function getEpisodes(group) {
+        axios.get(`${api}/episode/${group}`)
+          .then((res) => {
+            if (res.status === 200 ) {
+              const episodeList=res.data
+            //   console.log('response: '+res.data)
+              setEpisodesArray(episodeList);
+              console.log(episodesArray)
+              setLoadingData(false);
+            }
+            else{
+              setErrorPage(true);
+              setLoadingData(false);
+            }
+          })
+          .catch((err) => {
+            setLoadingData(false);
+            setErrorPage(true);
+            console.log(err);
+          });
+      }
+      useEffect(() => {
+        episodes=[]
+        getGroup();
+        getEpisodes(episodes)
+      }, [state.selectedCharacter]);
+
   return( 
     <CardDetailBG style={props.open?{opacity:1,zIndex:'1010'}:{opacity:0,zIndex:'-1'}}>
         <CardDetailWrapper style={matches?{width:'80%',marginTop:'8vw'}:{width:'100%',marginTop:0}}>
@@ -298,7 +344,7 @@ export default function CardDetails(props) {
             <EpisodeWrapper>
                 <div className='episode-wrapper-box'>
                     <div className='episode-wrapper-title'>Episodes</div>
-                    
+                    <Episodes episodes = {episodesArray}></Episodes>
                 </div>
                 
             </EpisodeWrapper>

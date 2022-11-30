@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import InfoIcon from '@mui/icons-material/Info';
 
 
-const InformationGrid = styled.div`
+
+const EpisodesGrid = styled.div`
     min-height: 150px;
     width:100%;
     position: relative;
@@ -16,7 +17,7 @@ const InformationGrid = styled.div`
     min-width: 341px;
     
 `
-const InformationCardFrame = styled.div`
+const EpisodesCardFrame = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,20 +29,21 @@ const InformationCardFrame = styled.div`
     height: fit-content;
     border:1px solid #B9B9B9;
     border-radius: 10px;
-    .information-card-frame-title{
+    .episodes-card-frame-title{
       width: 80%;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      text-align: left;
       font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 300;
-      font-size: 12px;
-      line-height: 15px;
-      color: #7A7A7A;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 15px;
+        color: #000000;
     }
-    .information-card-frame-info{
+    .episodes-card-frame-no{
       width: 80%;
       display: flex;
       flex-direction: row;
@@ -55,30 +57,45 @@ const InformationCardFrame = styled.div`
       line-height: 22px;
       color: #000000;
     }
+    .episodes-card-frame-date{
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: left;
+      font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 15px;
+        color: #515151;
+    }
 `
-function InformationCard(props){
+function EpisodesCard(props){
     return(
-      <InformationCardFrame >
-        <div className='information-card-frame-title'>
-          <InfoIcon/>
+      <EpisodesCardFrame >
+        <div className='episodes-card-frame-title'>
           {props.title}:
         </div>
-        <div className='information-card-frame-info'>
-          {props.value}
+        <div className='episodes-card-frame-no'>
+          {props.no}
+        </div>
+        <div className='episodes-card-frame-date'>
+          {props.date}
         </div>
         
-      </InformationCardFrame >
+      </EpisodesCardFrame >
     )
 }
 
-export default function Information(props) {
-  const information=[{property:'Gender',value:props.gender},{property:'Origin',value:props.origin},{property:'Type',value:props.type}]
+export default function Episodes(props) {
   return(
-        <InformationGrid>
-            {information?.map((item,key) => (
-              <InformationCard key={key} title={item.property} value={item.value}></InformationCard>
+        <EpisodesGrid>
+            {props.episodes?.map((item,key) => (
+              <EpisodesCard key={key} title={item.name} no={item.episode} date={item.air_date}></EpisodesCard>
             ))}
-        </InformationGrid>
+        </EpisodesGrid>
     
   )
 }
