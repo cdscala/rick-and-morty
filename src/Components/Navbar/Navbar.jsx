@@ -259,27 +259,27 @@ export default function Navbar(props) {
               <div className="navbar-side">
                 <ul className="menu-list">
                   <li className="menu-item">
-                    <NavLink className='menu-link' exact="true" to={ROUTES.CHARACTERSALL} >
+                    <NavLink className='menu-link' exact="true" to={ROUTES.CHARACTERSALL} onClick={context.changeGender.bind(this,'')}>
                       <div className="text">All</div>
                     </NavLink>
                   </li>
                   <li className="menu-item">
-                    <NavLink className='menu-link' exact="true" to={ROUTES.UNKNOWN} >
+                    <NavLink className='menu-link' exact="true" to={ROUTES.UNKNOWN} onClick={context.changeGender.bind(this,'unknown')}>
                       <div className="text">Unknown</div>
                     </NavLink>
                   </li>
                   <li className="menu-item">
-                    <NavLink className='menu-link' exact="true" to={ROUTES.FEMALE} >
+                    <NavLink className='menu-link' exact="true" to={ROUTES.FEMALE} onClick={context.changeGender.bind(this,'female')}>
                       <div className="text">Female</div>
                     </NavLink>
                   </li>
                   <li className="menu-item">
-                    <NavLink className='menu-link' exact="true" to={ROUTES.MALE} >
+                    <NavLink className='menu-link' exact="true" to={ROUTES.MALE} onClick={context.changeGender.bind(this,'male')}>
                       <div className="text">Male</div>
                     </NavLink>
                   </li>
                   <li className="menu-item">
-                    <NavLink className='menu-link' exact="true" to={ROUTES.GENDERLESS} >
+                    <NavLink className='menu-link' exact="true" to={ROUTES.GENDERLESS} onClick={context.changeGender.bind(this,'genderless')}>
                       <div className="text">Genderless</div>
                     </NavLink>
                   </li>
