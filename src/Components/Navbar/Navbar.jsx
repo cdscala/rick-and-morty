@@ -205,7 +205,7 @@ export default function Navbar(props) {
     const [notburg, changeBurger]= useState(true);
     const handleClick=() => {
         changeBurger(!notburg)
-        console.log(notburg)
+        // console.log(notburg)
     }
   
   return (

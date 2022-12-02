@@ -72,7 +72,7 @@ export default function Home() {
             .catch((err) => {
               setLoadingData(false);
               setErrorPage(true);
-              console.log(err);
+              // console.log(err);
             });
         }
         useEffect(() => {

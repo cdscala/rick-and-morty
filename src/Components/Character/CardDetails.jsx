@@ -309,9 +309,9 @@ export default function CardDetails(props) {
           .then((res) => {
             if (res.status === 200 ) {
               const episodeList=res.data
-              console.log('response: '+res.data)
+            //   console.log('response: '+res.data)
               setEpisodesArray([...episodeList]);
-              console.log(episodesArray)
+            //   console.log(episodesArray)
               setLoadingData(false);
             }
             else{

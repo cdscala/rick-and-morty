@@ -90,7 +90,7 @@ function EpisodesCard(props){
 }
 
 export default function Episodes(props) {
-    console.log(props.episodes)
+    // console.log(props.episodes)
   return(
         <EpisodesGrid>
             {props.episodes?.lenght<2?
