@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import HomeHeader from '../../Resouces/Footer.png'
-import {ReactComponent as SquadMakersLogo} from '../../Resouces/LogoSquad.svg'
+import {ReactComponent as CSLogo} from '../../Resouces/LogoCS.svg'
 
 
 const FooterWrapper= styled.div`
@@ -29,7 +29,7 @@ const FooterWrapper= styled.div`
 export default function Footer() {
   return(
         <FooterWrapper>
-            <SquadMakersLogo className='rick-morty-footer'></SquadMakersLogo>
+            <CSLogo className='rick-morty-footer'></CSLogo>
         </FooterWrapper>
   )
 }
