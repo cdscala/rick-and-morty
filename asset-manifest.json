@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/rick-and-morty/static/css/main.391a2a1d.css",
-    "main.js": "/rick-and-morty/static/js/main.a31a8142.js",
-    "static/js/787.745e99b1.chunk.js": "/rick-and-morty/static/js/787.745e99b1.chunk.js",
-    "static/media/welcome-bg.png": "/rick-and-morty/static/media/welcome-bg.b0fbd3f008a87ee19a8a.png",
-    "static/media/CardThumb.png": "/rick-and-morty/static/media/CardThumb.758ebbfc9d8b6fd158c3.png",
-    "static/media/Cabecera.png": "/rick-and-morty/static/media/Cabecera.dd73d2808af8c03ed063.png",
-    "static/media/Rick_and_Morty.svg": "/rick-and-morty/static/media/Rick_and_Morty.ae4120814cb46c08b14e9f79342f120c.svg",
-    "static/media/Footer.png": "/rick-and-morty/static/media/Footer.2d07c4cd300a74bf64ee.png",
-    "static/media/LogoCS.svg": "/rick-and-morty/static/media/LogoCS.f51310d83682c74774b3aebf7c83e65c.svg",
-    "static/media/Search.svg": "/rick-and-morty/static/media/Search.8ed121fbdb82acac710f8b34970218b5.svg",
-    "index.html": "/rick-and-morty/index.html",
-    "main.391a2a1d.css.map": "/rick-and-morty/static/css/main.391a2a1d.css.map",
-    "main.a31a8142.js.map": "/rick-and-morty/static/js/main.a31a8142.js.map",
-    "787.745e99b1.chunk.js.map": "/rick-and-morty/static/js/787.745e99b1.chunk.js.map"
+    "main.css": "./static/css/main.391a2a1d.css",
+    "main.js": "./static/js/main.28241d24.js",
+    "static/js/787.745e99b1.chunk.js": "./static/js/787.745e99b1.chunk.js",
+    "static/media/welcome-bg.png": "./static/media/welcome-bg.b0fbd3f008a87ee19a8a.png",
+    "static/media/CardThumb.png": "./static/media/CardThumb.758ebbfc9d8b6fd158c3.png",
+    "static/media/Cabecera.png": "./static/media/Cabecera.dd73d2808af8c03ed063.png",
+    "static/media/Rick_and_Morty.svg": "./static/media/Rick_and_Morty.ae4120814cb46c08b14e9f79342f120c.svg",
+    "static/media/Footer.png": "./static/media/Footer.2d07c4cd300a74bf64ee.png",
+    "static/media/LogoCS.svg": "./static/media/LogoCS.f51310d83682c74774b3aebf7c83e65c.svg",
+    "static/media/Search.svg": "./static/media/Search.8ed121fbdb82acac710f8b34970218b5.svg",
+    "index.html": "./index.html",
+    "main.391a2a1d.css.map": "./static/css/main.391a2a1d.css.map",
+    "main.28241d24.js.map": "./static/js/main.28241d24.js.map",
+    "787.745e99b1.chunk.js.map": "./static/js/787.745e99b1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.391a2a1d.css",
-    "static/js/main.a31a8142.js"
+    "static/js/main.28241d24.js"
   ]
 }
